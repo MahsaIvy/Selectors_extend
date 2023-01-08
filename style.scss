@@ -53,62 +53,6 @@ div {
       }
     }
     &:nth-of-type(2) {
-      display: flex;
-      gap: 1.6rem;
-      margin-top: 1rem;
-      div {
-        padding: 0;
-        width: toRem(45);
-        height: toRem(45);
-      }
-    }
-    .fs-1rem {
-      align-items: flex-start;
-      justify-content: flex-start;
-    }
-    .fs-2rem {
-      align-items: center;
-      justify-content: flex-start;
-    }
-    .fs-3rem {
-      align-items: flex-end;
-      justify-content: flex-start;
-    }
-    div {
-      display: flex;
-      width: convert(45);
-      height: convert(45);
-    }
-
-    $fs: 1rem, 2rem, 3rem;
-    @each $size in $fs {
-      .fs-#{$size} {
-        font-size: $size;
-      }
-    }
-    $base-color: white;
-    @for $i from 1 through 19 {
-      div:nth-of-type(#{$i}) {
-        background-color: darken($base-color, $i * 5%);
-
-        @if $i < 10 {
-          color: black;
-        } @else if $i == 10 {
-          color: red;
-          background-color: blue;
-        } @else if $i < 19 && $i > 10 {
-          color: lighten(black, $i * 5%);
-        } @else if $i > 1 && $i < 10 {
-          color: darken(white, $i * 10%);
-        } @else {
-          color: white;
-        }
-        @for $i from 1 through 12 {
-          align-items: flex-start;
-        }
-      }
-    }
-    &:nth-of-type(3) {
       @include border(toRem(2) solid $color-secondary);
       padding: toRem(24) toRem(72);
       margin-top: toRem(16);
